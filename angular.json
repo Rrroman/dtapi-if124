@@ -120,6 +120,7 @@
   },
   "defaultProject": "dtapi-if124",
   "cli": {
+    "analytics": false,
     "defaultCollection": "@angular-eslint/schematics"
   }
 }
