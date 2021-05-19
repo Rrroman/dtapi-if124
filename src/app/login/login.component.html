@@ -1,0 +1,22 @@
+<div class='header'>
+    <div class="header__info">
+      <p class="header__info-subtitle">іф пнвк</p>
+      <h1 class="header__info-title">"Католицька ЗШ ІІ-ІІІ ст.- гімназія<br>св. Василія Великого"</h1>
+      <p>E-progress<br>(журнал успішності учнів)</p>
+      <img src='' alt='Логотип'>
+    </div>
+    <div class="header__auth">
+      <p>Вхід до системи</p>
+      <form class="header__auth-form" [formGroup]='form' (ngSubmit)='login()'>
+        <div class="header__auth-form-input">
+          <label>Ім'я користувача</label>
+          <input type='text' placeholder="Введіть ім'я користувача" formControlName='login'>
+        </div>
+        <div class="header__auth-form-input">
+          <label>Ім'я користувача</label>
+          <input type='password' placeholder="Введіть пароль користувача" formControlName='password'>
+        </div>
+        <button type='submit'>Submit</button>
+      </form>
+    </div>
+  </div>
