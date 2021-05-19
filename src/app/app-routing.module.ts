@@ -5,8 +5,8 @@ import { ScheduleComponent } from './schedule/schedule.component';
 
 const routes: Routes = [
   { path: 'schedule', component: ScheduleComponent },
-  { path: 'login', component: LoginComponent},
-  { path: '**', redirectTo: 'login' }
+  { path: 'login', component: LoginComponent },
+  { path: '**', redirectTo: 'login' },
 ];
 
 @NgModule({
