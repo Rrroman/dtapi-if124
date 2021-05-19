@@ -1,14 +1,12 @@
-<form class="example-form">
+<form class="example-form" [formGroup]="subjectForm">
     <mat-form-field class="example-full-width">
       <mat-label>Назва предмету</mat-label>
-      <input matInput placeholder="Назва предмету">
+      <input matInput placeholder="Назва предмету" formControlName="subjectName">
     </mat-form-field>
   
     <mat-form-field class="example-full-width">
       <mat-label>Опис предмету</mat-label>
-      <textarea matInput placeholder="Опис предмету"></textarea>
+      <textarea matInput placeholder="Опис предмету" formControlName="subjectDescription"></textarea>
     </mat-form-field>
     <button mat-raised-button color="primary">Зберегти</button>
 </form>
-  
-<p>Subject works</p>
