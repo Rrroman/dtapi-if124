@@ -1,0 +1,25 @@
+<p>students works!</p>
+
+<div class="container">
+  <div class="active-classes">
+    <p>Active Classes</p>
+    <div class="active-classes-list">
+      <button 
+        mat-raised-button color="primary" 
+        class="active-classes-item" 
+        *ngFor="let class of classes">{{ class }}</button>
+    </div>
+  </div>
+  <br>
+  <hr>
+  <br>
+  <div class="old-classes">
+    <p>Old Classes</p>
+    <div class="old-classes-list">
+      <button 
+        mat-raised-button color="primary"
+        class="old-classes-item"
+        *ngFor="let class of oldClasses">{{ class }}</button>
+    </div>
+  </div>
+</div>
