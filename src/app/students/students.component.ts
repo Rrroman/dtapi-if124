@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
 
 import { StudentsService } from 'src/services/students.service';
 import { Students } from './interfaces/students.model';
@@ -7,30 +8,33 @@ import { Students } from './interfaces/students.model';
 @Component({
   selector: 'app-students',
   templateUrl: './students.component.html',
-  styleUrls: ['./students.component.scss']
+  styleUrls: ['./students.component.scss'],
 })
-export class StudentsComponent implements OnInit {
+export class StudentsComponent implements AfterViewInit {
+  @ViewChild(MatSort)
+  public sort!: MatSort;
+
   public students: Students[] = [];
-  displayedColumns: string[] = ['lastname', 'firstname', 'dateOfBirth', 'classe'];
 
-  dataSource = new MatTableDataSource(this.students);
+  public displayedColumns: string[] = [
+    'classId',
+    'lastname',
+    'firstname',
+    'dateOfBirth',
+    'classe',
+  ];
 
-  constructor(private studentService: StudentsService) { }
+  public dataSource = new MatTableDataSource(this.students);
 
-  ngOnInit(): void {
-    //this.getClass();
+  public constructor(private studentService: StudentsService) {}
+
+  public ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
   }
 
-  public getClass() {
-    this.studentService.getStudents('3').subscribe((res: Array<Students>) => {
-      console.log(res);
+  public getClass(id: string) {
+    this.studentService.getStudents(id).subscribe((res: Array<Students>) => {
       this.students = res;
     });
   }
-
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-
 }

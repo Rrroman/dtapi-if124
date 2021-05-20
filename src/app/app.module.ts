@@ -27,7 +27,7 @@ import { DialogOverviewComponent } from './subjects-r/dialog-overview/dialog-ove
     SubjectsRComponent,
     SubjectsVComponent,
     DialogOverviewComponent,
-    StudentsComponent
+    StudentsComponent,
   ],
   entryComponents: [DialogOverviewComponent],
   imports: [

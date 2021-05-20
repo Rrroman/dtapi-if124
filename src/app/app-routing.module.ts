@@ -8,7 +8,7 @@ import { SubjectsVComponent } from './subjects-v/subjects-v.component';
 
 const routes: Routes = [
   { path: 'schedule', component: ScheduleComponent },
-  { path: 'students', component: StudentsComponent},
+  { path: 'students', component: StudentsComponent },
   { path: 'subjectsV', component: SubjectsVComponent },
   { path: 'subjectsr', component: SubjectsRComponent },
   { path: 'login', component: LoginComponent },
