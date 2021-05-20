@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Subject } from '../interfaces/Subjects';
+import { Subject } from '../../../interfaces/Subjects';
 import { SubjectVService } from 'src/services/subject-v.service';
 
 @Component({
