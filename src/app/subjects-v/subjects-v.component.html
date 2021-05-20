@@ -1,15 +1,22 @@
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
   <ng-container matColumnDef="subjectName">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Назва</th>
-    <td mat-cell *matCellDef="let element">
+    <td mat-cell *matCellDef="let element" class="show-button">
       {{ element.subjectName }}
     </td>
   </ng-container>
 
   <ng-container matColumnDef="subjectDescription">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Опис</th>
-    <td mat-cell *matCellDef="let element">
+    <td mat-cell *matCellDef="let element" class="show-button">
       {{ element.subjectDescription }}
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="showChangeDialog(element)"
+      >
+        Edit
+      </button>
     </td>
   </ng-container>
 

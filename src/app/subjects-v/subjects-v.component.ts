@@ -2,7 +2,9 @@ import { Component, AfterViewInit, ViewChild, OnInit } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { SubjectVService } from 'src/services/subject-v.service';
-import { Subjects } from './interfaces/Subjects';
+import { Subject } from '../../interfaces/Subjects';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogChangeComponent } from './dialog-change/dialog-change.component';
 
 @Component({
   selector: 'app-subjects-v',
@@ -16,19 +18,32 @@ export class SubjectsVComponent implements AfterViewInit, OnInit {
 
   @ViewChild(MatSort) public sort!: MatSort;
 
-  public constructor(private subjectServiceV: SubjectVService) {}
+  public constructor(
+    private subjectServiceV: SubjectVService,
+    private dialog: MatDialog
+  ) {}
 
-  public ngOnInit(): void {
-    this.subjectServiceV.getSubjects().subscribe((res: Array<Subjects>) => {
-      this.dataSource.data = res;
+  private showSubjects(subject: Array<Subject>): void {
+    this.dataSource.data = subject;
+  }
+
+  public showChangeDialog(subject: Subject): void {
+    this.dialog.open(DialogChangeComponent, {
+      data: subject,
     });
   }
 
-  public changeSubjects(subjectId: number): void {
-    console.log(subjectId);
+  private getSubjects(): void {
+    this.subjectServiceV.getSubjects().subscribe((res: Array<Subject>) => {
+      this.showSubjects(res);
+    });
   }
 
-  public ngAfterViewInit() {
+  public ngOnInit(): void {
+    this.getSubjects();
+  }
+
+  public ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
   }
 }
