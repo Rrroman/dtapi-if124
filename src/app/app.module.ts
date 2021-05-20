@@ -6,17 +6,18 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
-import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
+import { TokenInterceptor } from 'src/app/interceptors/token.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { ScheduleComponent } from './schedule/schedule.component';
 import { SubjectsRComponent } from './subjects-r/subjects-r.component';
 import { SubjectsVComponent } from './subjects-v/subjects-v.component';
 import { LoginComponent } from './login/login.component';
+import { DialogChangeComponent } from './subjects-v/dialog-change/dialog-change.component';
 import { DialogOverviewComponent } from './subjects-r/dialog-overview/dialog-overview.component';
 
 @NgModule({
@@ -27,6 +28,7 @@ import { DialogOverviewComponent } from './subjects-r/dialog-overview/dialog-ove
     SubjectsRComponent,
     SubjectsVComponent,
     DialogOverviewComponent,
+    DialogChangeComponent,
   ],
   entryComponents: [DialogOverviewComponent],
   imports: [
@@ -44,7 +46,13 @@ import { DialogOverviewComponent } from './subjects-r/dialog-overview/dialog-ove
     MatDialogModule,
     MatCardModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      multi: true,
+      useClass: TokenInterceptor,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

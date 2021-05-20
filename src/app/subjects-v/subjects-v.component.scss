@@ -5,11 +5,30 @@ table {
   td,
   th {
     border: 1px solid #ccc;
-    padding: 10px 15px;
+    padding: 10px;
   }
 
   td {
     width: 50%;
+    vertical-align: middle;
+
+    button {
+      display: none;
+      min-width: 50px;
+      line-height: 28px;
+      background-color: #92a8d1;
+    }
+  }
+
+  tr {
+    line-height: 2.3;
+  }
+
+  tr:hover {
+    button {
+      display: block;
+      float: right;
+    }
   }
 
   th {
