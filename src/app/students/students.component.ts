@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {MatTableDataSource} from '@angular/material/table';
+
+import { StudentsService } from 'src/services/students.service';
+import { Students } from './interfaces/students.model';
 
 @Component({
   selector: 'app-students',
@@ -6,13 +10,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./students.component.scss']
 })
 export class StudentsComponent implements OnInit {
-  public classes = ['7-b', '5-a', '3-c', '8-z'];
-  public oldClasses = ['3-d', '4-c', '7-s']
+  public students: Students[] = [];
+  displayedColumns: string[] = ['lastname', 'firstname', 'dateOfBirth', 'classe'];
 
-  constructor() { }
+  dataSource = new MatTableDataSource(this.students);
 
+  constructor(private studentService: StudentsService) { }
 
   ngOnInit(): void {
+    //this.getClass();
+  }
+
+  public getClass() {
+    this.studentService.getStudents('3').subscribe((res: Array<Students>) => {
+      console.log(res);
+      this.students = res;
+    });
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
 }

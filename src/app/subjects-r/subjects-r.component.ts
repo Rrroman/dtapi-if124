@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogOverviewComponent } from './dialog-overview/dialog-overview.component';
 
 @Component({
   selector: 'app-subjects-r',
@@ -7,8 +8,9 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./subjects-r.component.scss'],
 })
 export class SubjectsRComponent {
-  public subjectForm = new FormGroup({
-    subjectName: new FormControl(''),
-    subjectDescription: new FormControl(''),
-  });
+  public constructor(public dialog: MatDialog) {}
+
+  public openDialog() {
+    this.dialog.open(DialogOverviewComponent);
+  }
 }
