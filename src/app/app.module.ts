@@ -20,6 +20,9 @@ import { LoginComponent } from './login/login.component';
 import { DialogChangeComponent } from './subjects-v/dialog-change/dialog-change.component';
 import { DialogOverviewComponent } from './subjects-r/dialog-overview/dialog-overview.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeaderComponent } from './header/header.component';
+import { MenuComponent } from './menu/menu.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     DialogOverviewComponent,
     DialogChangeComponent,
     DashboardComponent,
+    HeaderComponent,
+    MenuComponent,
+    HomepageComponent,
   ],
   entryComponents: [DialogOverviewComponent],
   imports: [
