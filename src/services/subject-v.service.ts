@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Subject } from 'src/interfaces/Subjects';
 
 @Injectable({
   providedIn: 'root',
@@ -10,13 +11,20 @@ export class SubjectVService {
   public constructor(private httpClient: HttpClient) {}
 
   public getSubjects(): Observable<any> {
-    return this.httpClient
-      .get('http://dtapi.if.ua:8080/subjects', {
-        headers: {
-          Authorization:
-            'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsIlJvbGVzIjp7ImF1dGhvcml0eSI6IlJPTEVfQURNSU4ifSwiZXhwIjoxNjIxNDM5OTA4LCJpYXQiOjE2MjE0MzI2MzUsImp0aSI6IjI0In0.B-QrS_MXFSBka_dxfXOgSxAzut81G6JH4sF6OSrgzoIH5Vms8aOGTzSGCRVycKI5AQPPprruGmBiIMuY6IcY1Q',
-        },
+    return this.httpClient.get('http://dtapi.if.ua:8080/subjects').pipe(
+      map((res: any) => {
+        return res.data;
       })
+    );
+  }
+
+  public changeSubject(subject: Subject): Observable<any> {
+    const body = {
+      subjectName: subject.subjectName,
+      subjectDescription: subject.subjectDescription,
+    };
+    return this.httpClient
+      .put(`http://dtapi.if.ua:8080/subjects/${subject.subjectId}`, body)
       .pipe(
         map((res: any) => {
           return res.data;
