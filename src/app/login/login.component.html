@@ -1,22 +1,50 @@
 <div class='header'>
-    <div class="header__info">
-      <p class="header__info-subtitle">іф пнвк</p>
-      <h1 class="header__info-title">"Католицька ЗШ ІІ-ІІІ ст.- гімназія<br>св. Василія Великого"</h1>
-      <p>E-progress<br>(журнал успішності учнів)</p>
+  <mat-card class='header__info'>
+    <mat-card-header>
+      <mat-card-subtitle class="header__info-subtitle">іф пнвк</mat-card-subtitle>
+      <mat-card-title class="header__info-title">"Католицька ЗШ ІІ-ІІІ ст.- гімназія св. Василія Великого"
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p class="header__info-description">
+        E-progress<br>(журнал успішності учнів)
+      </p>
       <img src='' alt='Логотип'>
-    </div>
-    <div class="header__auth">
-      <p>Вхід до системи</p>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="header__auth">
+    <mat-card-header>
+      <mat-card-title>Вхід до системи</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
       <form class="header__auth-form" [formGroup]='form' (ngSubmit)='login()'>
-        <div class="header__auth-form-input">
-          <label>Ім'я користувача</label>
-          <input type='text' placeholder="Введіть ім'я користувача" formControlName='login'>
+        <p class='header__auth-form-description'>Ім'я користувача</p>
+        <mat-form-field appearance="standard">
+          <mat-label class='header__auth-form-label'>Введіть ім'я користувача</mat-label>
+          <input class='header__auth-form-input' matInput formControlName='login'>
+          <mat-icon matPrefix>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 
+                5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
+            </svg>
+          </mat-icon>
+        </mat-form-field>
+        <p class='header__auth-form-description'>Пароль</p>
+        <mat-form-field appearance="standard">
+          <mat-label>Введіть пароль</mat-label>
+          <input class='header__auth-form-input' matInput formControlName='password'>
+          <mat-icon matPrefix>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1
+                0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71
+                1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
+            </svg>
+          </mat-icon>
+        </mat-form-field>
+        <div>
+          <button class='header__auth-form-button' mat-raised-button type='submit' color="primary">Вхід</button>
         </div>
-        <div class="header__auth-form-input">
-          <label>Ім'я користувача</label>
-          <input type='password' placeholder="Введіть пароль користувача" formControlName='password'>
-        </div>
-        <button type='submit'>Submit</button>
       </form>
-    </div>
-  </div>
+    </mat-card-content>
+  </mat-card>
+</div>

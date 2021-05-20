@@ -1,10 +1,10 @@
 import { Component, AfterViewInit, ViewChild, OnInit } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { SubjectVService } from 'src/services/subject-v.service';
 import { MatDialog } from '@angular/material/dialog';
-import { Subject } from '../../interfaces/Subjects';
 import { DialogChangeComponent } from './dialog-change/dialog-change.component';
+import { Subject } from '../interfaces/subjectr';
+import { SubjectVService } from '../services/subject-v/subject-v.service';
 
 @Component({
   selector: 'app-subjects-v',

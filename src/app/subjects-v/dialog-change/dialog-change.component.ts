@@ -1,8 +1,8 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { SubjectVService } from 'src/services/subject-v.service';
-import { Subject } from '../../../interfaces/Subjects';
+import { Subject } from 'src/app/interfaces/subjectr';
+import { SubjectVService } from 'src/app/services/subject-v/subject-v.service';
 
 @Component({
   selector: 'app-dialog-change',

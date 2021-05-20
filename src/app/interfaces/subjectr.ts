@@ -1,5 +1,5 @@
 export interface Subject {
-  subjectDescription: string;
   subjectId: number;
+  subjectDescription: string;
   subjectName: string;
 }
