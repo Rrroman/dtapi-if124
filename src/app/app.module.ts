@@ -19,6 +19,7 @@ import { SubjectsVComponent } from './subjects-v/subjects-v.component';
 import { LoginComponent } from './login/login.component';
 import { DialogChangeComponent } from './subjects-v/dialog-change/dialog-change.component';
 import { DialogOverviewComponent } from './subjects-r/dialog-overview/dialog-overview.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { DialogOverviewComponent } from './subjects-r/dialog-overview/dialog-ove
     SubjectsVComponent,
     DialogOverviewComponent,
     DialogChangeComponent,
+    DashboardComponent,
   ],
   entryComponents: [DialogOverviewComponent],
   imports: [
