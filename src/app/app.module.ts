@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TokenInterceptor } from 'src/app/interceptors/token.interceptor';
+import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ScheduleComponent } from './schedule/schedule.component';
@@ -53,6 +54,7 @@ import { HomepageComponent } from './homepage/homepage.component';
     HttpClientModule,
     MatDialogModule,
     MatCardModule,
+    MatIconModule,
   ],
   providers: [
     {
