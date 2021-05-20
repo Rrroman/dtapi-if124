@@ -47,4 +47,4 @@ import { DialogOverviewComponent } from './subjects-r/dialog-overview/dialog-ove
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
