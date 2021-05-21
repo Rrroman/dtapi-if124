@@ -12,12 +12,7 @@ export class SubjectsRService {
 
   public senGetRequest(): Observable<Subject[]> {
     return this.http
-      .get<Array<Subject>>('http://dtapi.if.ua:8080/subjects', {
-        headers: {
-          Authorization:
-            'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsIlJvbGVzIjp7ImF1dGhvcml0eSI6IlJPTEVfQURNSU4ifSwiZXhwIjoxNjIxNTM3OTQ0LCJpYXQiOjE2MjE1MzQzNDQsImp0aSI6IjI0In0.Zblm4-85H1z6M-cnvHz76EnkTmkBfkp7Jqpqyl6Qj5N8sH6WCJ9DAeqnrs2rqwSjHOL0YqvuXj0Vu7Aeg-QV0Q',
-        },
-      })
+      .get<Array<Subject>>('http://dtapi.if.ua:8080/subjects')
       .pipe(
         map((res: any) => {
           return res.data;
