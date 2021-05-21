@@ -24,7 +24,7 @@ export class StudentsComponent implements AfterViewInit {
     'classe',
   ];
 
-  public dataSource = new MatTableDataSource(this.students);
+  dataSource = new MatTableDataSource(this.students);
 
   public constructor(private studentService: StudentsService) {}
 
