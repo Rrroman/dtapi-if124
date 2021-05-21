@@ -18,15 +18,13 @@ export class AuthService {
       .post(this.URL, userData, { observe: 'response' })
       .subscribe(
         (response) => {
-          // const keys = response.headers.keys();
-          // const headers = keys.map(key =>
-          //   `${key}: ${response.headers.get(key)}`
-          //   );
           const token = response.headers.get('authorization');
-          localStorage.setItem('authToken', JSON.stringify(token));
+          localStorage.setItem('authToken', token!);
           console.log('Local storage --->', localStorage);
         },
         (error) => console.log(error)
       );
   }
 }
+
+/// guards

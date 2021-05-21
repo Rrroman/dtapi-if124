@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 
-import { StudentsService } from 'src/services/students.service';
+import { StudentsService } from 'src/app/services/students.service';
 import { Students } from './interfaces/students.model';
 
 @Component({
@@ -24,7 +24,7 @@ export class StudentsComponent implements AfterViewInit {
     'classe',
   ];
 
-  dataSource = new MatTableDataSource(this.students);
+  public dataSource = new MatTableDataSource();
 
   public constructor(private studentService: StudentsService) {}
 
@@ -34,7 +34,7 @@ export class StudentsComponent implements AfterViewInit {
 
   public getClass(id: string) {
     this.studentService.getStudents(id).subscribe((res: Array<Students>) => {
-      this.students = res;
+      this.dataSource.data = res;
     });
   }
 }
