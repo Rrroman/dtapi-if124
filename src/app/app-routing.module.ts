@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { MarkTypesComponent } from './mark-types/mark-types.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { SubjectsRComponent } from './subjects-r/subjects-r.component';
 import { SubjectsVComponent } from './subjects-v/subjects-v.component';
@@ -9,6 +10,7 @@ const routes: Routes = [
   { path: 'schedule', component: ScheduleComponent },
   { path: 'subjectsV', component: SubjectsVComponent },
   { path: 'subjectsr', component: SubjectsRComponent },
+  { path: 'Mark-types', component: MarkTypesComponent },
   { path: 'login', component: LoginComponent },
   { path: '**', redirectTo: 'login' },
 ];
