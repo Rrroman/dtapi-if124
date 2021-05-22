@@ -5,6 +5,7 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { SubjectsRComponent } from './subjects-r/subjects-r.component';
 import { SubjectsVComponent } from './subjects-v/subjects-v.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 const routes: Routes = [
   { path: 'schedule', component: ScheduleComponent },
