@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TokenInterceptor } from 'src/app/interceptors/token.interceptor';
+import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ScheduleComponent } from './schedule/schedule.component';
@@ -22,6 +23,10 @@ import { DialogChangeComponent } from './subjects-v/dialog-change/dialog-change.
 import { StudentsComponent } from './students/students.component';
 import { DialogOverviewComponent } from './subjects-r/dialog-overview/dialog-overview.component';
 import { ChangeStudentComponent } from './students/change-student/change-student.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeaderComponent } from './header/header.component';
+import { MenuComponent } from './menu/menu.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +39,10 @@ import { ChangeStudentComponent } from './students/change-student/change-student
     StudentsComponent,
     DialogChangeComponent,
     ChangeStudentComponent,
+    DashboardComponent,
+    HeaderComponent,
+    MenuComponent,
+    HomepageComponent,
   ],
   entryComponents: [DialogOverviewComponent],
   imports: [
