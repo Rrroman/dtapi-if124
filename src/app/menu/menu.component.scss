@@ -1,8 +1,14 @@
-@media screen and (max-height: 450px) {
-  .menu-container {padding-top: 15px;}
-  .menu-container a {font-size: 18px;}
+@media screen and (min-width: 599px) {
+  .menu-button {
+    display: none;
+  }
 }
-.menu-container {
+
+.menu-button {
+  cursor: pointer;
+}
+
+.menu-items {
   display: flex;
   flex-direction: column;
   background-color: #fff;
@@ -33,12 +39,10 @@ mat-icon {
   padding-top: 10px;
 }
 
-.menu-container .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+@media screen and (max-width: 599px)  {
+  .menu-hidden {
+    display: none;
+  }
 }
 
 
