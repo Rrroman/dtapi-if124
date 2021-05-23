@@ -1,0 +1,48 @@
+@media screen and (min-width: 599px) {
+  .menu-button {
+    display: none;
+  }
+}
+
+.menu-button {
+  cursor: pointer;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: max-content;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  justify-content: center;
+  a {
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    padding: 20px;
+  }
+
+}
+
+.menu-item:hover, .menu-item:hover mat-icon {
+    background-color: #92a8d1;
+    color: #fff;
+    opacity: 0.8;
+}
+
+mat-icon {
+  font-size: 30px;
+  color: #99a9d9;
+  margin-right: 20px;
+  padding-top: 10px;
+}
+
+@media screen and (max-width: 599px)  {
+  .menu-hidden {
+    display: none;
+  }
+}
+
+
