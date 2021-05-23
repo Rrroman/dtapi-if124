@@ -1,0 +1,52 @@
+<div class="container">
+  
+  <div class="btns">
+    <button 
+    mat-button
+    (click)="getClass('2')">7-A</button>
+
+    <button 
+    mat-button
+    (click)="getClass('3')">7-B</button>
+
+    <button 
+    mat-button
+    (click)="getClass('4')">9</button>
+  </div>
+
+  <div class="div-table">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+      <ng-container matColumnDef="classId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ІД Класу </th>
+        <td mat-cell *matCellDef="let element"> {{element.classId}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="lastname">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Прізвище </th>
+        <td mat-cell *matCellDef="let element"> {{element.lastname}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="firstname">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Ім'я </th>
+        <td mat-cell *matCellDef="let element"> {{element.firstname}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="dateOfBirth">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Дата народження </th>
+        <td mat-cell *matCellDef="let element"> {{element.dateOfBirth}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="classe">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Клас </th>
+        <td mat-cell *matCellDef="let element"> {{element.classe}} </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <button mat-button>Додати учня</button>
+  </div>
+
+</div>

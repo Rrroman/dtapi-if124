@@ -19,6 +19,7 @@ import { SubjectsRComponent } from './subjects-r/subjects-r.component';
 import { SubjectsVComponent } from './subjects-v/subjects-v.component';
 import { LoginComponent } from './login/login.component';
 import { DialogChangeComponent } from './subjects-v/dialog-change/dialog-change.component';
+import { StudentsComponent } from './students/students.component';
 import { DialogOverviewComponent } from './subjects-r/dialog-overview/dialog-overview.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
@@ -33,6 +34,7 @@ import { HomepageComponent } from './homepage/homepage.component';
     SubjectsRComponent,
     SubjectsVComponent,
     DialogOverviewComponent,
+    StudentsComponent,
     DialogChangeComponent,
     DashboardComponent,
     HeaderComponent,

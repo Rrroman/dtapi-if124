@@ -1,0 +1,30 @@
+table {
+  margin: 0 auto;
+  width: 90%;
+}
+
+button {
+  margin: auto 20px;
+  background-color: #92a8d1;
+  color: #ffffff;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 50px auto;
+}
+
+.btns {
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+}
+
+  @media all and (max-width: 767px) {
+
+}
