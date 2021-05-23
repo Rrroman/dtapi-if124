@@ -18,6 +18,7 @@ import { SubjectsRComponent } from './subjects-r/subjects-r.component';
 import { SubjectsVComponent } from './subjects-v/subjects-v.component';
 import { LoginComponent } from './login/login.component';
 import { DialogChangeComponent } from './subjects-v/dialog-change/dialog-change.component';
+import { StudentsComponent } from './students/students.component';
 import { DialogOverviewComponent } from './subjects-r/dialog-overview/dialog-overview.component';
 
 @NgModule({
@@ -28,6 +29,7 @@ import { DialogOverviewComponent } from './subjects-r/dialog-overview/dialog-ove
     SubjectsRComponent,
     SubjectsVComponent,
     DialogOverviewComponent,
+    StudentsComponent,
     DialogChangeComponent,
   ],
   entryComponents: [DialogOverviewComponent],
