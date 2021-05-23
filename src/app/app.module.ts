@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -20,6 +21,7 @@ import { LoginComponent } from './login/login.component';
 import { DialogChangeComponent } from './subjects-v/dialog-change/dialog-change.component';
 import { StudentsComponent } from './students/students.component';
 import { DialogOverviewComponent } from './subjects-r/dialog-overview/dialog-overview.component';
+import { ChangeStudentComponent } from './students/change-student/change-student.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { DialogOverviewComponent } from './subjects-r/dialog-overview/dialog-ove
     DialogOverviewComponent,
     StudentsComponent,
     DialogChangeComponent,
+    ChangeStudentComponent,
   ],
   entryComponents: [DialogOverviewComponent],
   imports: [
@@ -47,6 +50,7 @@ import { DialogOverviewComponent } from './subjects-r/dialog-overview/dialog-ove
     HttpClientModule,
     MatDialogModule,
     MatCardModule,
+    MatIconModule,
   ],
   providers: [
     {
