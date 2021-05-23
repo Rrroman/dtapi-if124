@@ -8,9 +8,8 @@ describe('MarkTypesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MarkTypesComponent ]
-    })
-    .compileComponents();
+      declarations: [MarkTypesComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

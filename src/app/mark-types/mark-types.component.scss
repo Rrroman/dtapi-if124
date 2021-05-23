@@ -1,6 +1,22 @@
-p {
-    font-size: 1rem;
-}
 button {
-    background: green;
+  background: #92a8d1;
+  color: #fff;
+  display: none;
+}
+
+tr {
+  line-height: 2.7;
+
+  &:hover {
+    button {
+      position: absolute;
+      left: 50px;
+      display: inline-block;
+
+    }
+  }
+}
+
+table {
+  width: 100%;
 }
