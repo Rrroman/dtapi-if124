@@ -22,6 +22,10 @@ import { DialogChangeComponent } from './subjects-v/dialog-change/dialog-change.
 import { StudentsComponent } from './students/students.component';
 import { DialogOverviewComponent } from './subjects-r/dialog-overview/dialog-overview.component';
 import { ChangeStudentComponent } from './students/change-student/change-student.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeaderComponent } from './header/header.component';
+import { MenuComponent } from './menu/menu.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +38,10 @@ import { ChangeStudentComponent } from './students/change-student/change-student
     StudentsComponent,
     DialogChangeComponent,
     ChangeStudentComponent,
+    DashboardComponent,
+    HeaderComponent,
+    MenuComponent,
+    HomepageComponent,
   ],
   entryComponents: [DialogOverviewComponent],
   imports: [
