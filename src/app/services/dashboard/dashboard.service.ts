@@ -21,5 +21,4 @@ export class DashboardService {
   public getTeachers(): Observable<any> {
     return this.httpClient.get(`${this.uri}teachers`);
   }
-
 }
