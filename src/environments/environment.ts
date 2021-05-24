@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://dtapi.if.ua:8080'
+  baseUrl: 'http://dtapi.if.ua:8080',
 };
 
 /*
