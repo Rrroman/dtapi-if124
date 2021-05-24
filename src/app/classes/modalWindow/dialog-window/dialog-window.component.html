@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>Класс</h1>
+<div mat-dialog-content>
+  <form class="classes-form" [formGroup]="classesForm">
+    <mat-form-field class="classes-form-item">
+      <mat-label>Назва класу</mat-label>
+      <input matInput placeholder="Назва класу" formControlName="classesName">
+    </mat-form-field>
+
+    <mat-form-field class="classes-form-item">
+      <mat-label>Навчальний рік</mat-label>
+      <input matInput placeholder="Навчальний рік" formControlName="classesYear">
+    </mat-form-field>
+
+    <mat-form-field class="classes-form-item">
+      <mat-label>Опис класу</mat-label>
+      <textarea matInput placeholder="Опис класу" formControlName="classesDescription"></textarea>
+    </mat-form-field>
+
+    <mat-radio-group aria-label="Статус класу" formControlName="classesIsActive">
+      <mat-radio-button [value]=true>Активний клас</mat-radio-button>
+      <mat-radio-button [value]=false>Неактивний клас</mat-radio-button>
+    </mat-radio-group>
+
+    <div class="btn-wrapper">
+      <button class="dialog-button" (click)="save()" mat-raised-button mat-dialog-close
+        color="primary">Зберегти</button>
+      <button class="dialog-button" mat-button mat-dialog-close color="primary">Закрити</button>
+    </div>
+
+  </form>
+</div>

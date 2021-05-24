@@ -6,6 +6,7 @@ import { StudentsComponent } from './students/students.component';
 import { SubjectsRComponent } from './subjects-r/subjects-r.component';
 import { SubjectsVComponent } from './subjects-v/subjects-v.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ClassesComponent } from './classes/classes.component';
 
 const routes: Routes = [
   { path: 'schedule', component: ScheduleComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'subjectsr', component: SubjectsRComponent },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'classes', component: ClassesComponent },
   { path: '**', redirectTo: 'login' },
 ];
 
