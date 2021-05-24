@@ -1,12 +1,35 @@
 table {
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
+
+  tr {
+    button {
+      display: none;
+    }
+  }
+  td {
+    width: 15%;
+    vertical-align: middle;
+  }
+  
+  tr:hover {
+    button {
+      display: block;
+      margin: 0;
+      float: right;
+    }
+  }
 }
 
 button {
-  margin: auto 20px;
+  margin: 20px;
   background-color: #92a8d1;
   color: #ffffff;
+}
+
+.mat-header-cell {
+  font-size: medium;
+  text-align: center;
 }
 
 .mat-form-field {
@@ -19,12 +42,12 @@ button {
   margin: 50px auto;
 }
 
-.btns {
-  margin: 30px auto;
+.header {
   display: flex;
   justify-content: center;
-}
+  margin: 20px auto;
 
-  @media all and (max-width: 767px) {
-
+  h2 {
+    text-align: center;
+  }
 }
