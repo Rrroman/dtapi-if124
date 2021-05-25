@@ -38,7 +38,7 @@ export class StudentsComponent implements OnInit, AfterViewInit {
     console.log(student);
     
     this.matdialog.open(ChangeStudentComponent, {
-      data: student
+      data: student,
     });
   }
 
