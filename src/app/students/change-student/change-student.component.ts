@@ -33,6 +33,8 @@ export class ChangeStudentComponent {
       patronymic: this.formForChanges.value.patronymic,
       dateOfBirth: this.formForChanges.value.dateofBirth,
       classe: this.formForChanges.value.classe,
+      
+
     };
     this.studentService.changeStudent(student).subscribe((res) => {
       this.data = res;

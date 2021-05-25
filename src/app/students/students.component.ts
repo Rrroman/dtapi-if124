@@ -43,6 +43,8 @@ export class StudentsComponent implements OnInit, AfterViewInit {
   public showStudents(id: number) {
     this.studentService.getStudents(id).subscribe((res: Array<Student>) => {
       this.students.data = res;
+      console.log(res);
+      
     });
   }
 
@@ -50,6 +52,13 @@ export class StudentsComponent implements OnInit, AfterViewInit {
     this.studentService.getClasses().subscribe((res: Array<Clazz>) => {
       this.classes = res;
     });
+  }
+
+  public newStudent() {
+    this.matdialog.open(ChangeStudentComponent, {
+      data: this.matdialog._getAfterAllClosed()
+    })
+    //this.studentService.createStudent(data)
   }
 
   public ngOnInit() {
