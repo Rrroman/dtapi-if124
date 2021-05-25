@@ -28,7 +28,6 @@ import { MenuComponent } from './menu/menu.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ClassesComponent } from './classes/classes.component';
 import { DialogWindowComponent } from './classes/modalWindow/dialog-window/dialog-window.component';
-import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({

@@ -35,8 +35,10 @@ export class StudentsComponent implements OnInit, AfterViewInit {
   ) {}
 
   public showChangeDialog(student: Student): void {
+    console.log(student);
+    
     this.matdialog.open(ChangeStudentComponent, {
-      data: student,
+      data: student
     });
   }
 
