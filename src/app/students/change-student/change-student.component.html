@@ -1,6 +1,6 @@
 <h1 mat-dialog-title>Учень</h1>
 <div mat-dialog-content>
-  <form [formGroup]="formForChanges" novalidate (ngSubmit)="submit()">
+  <form [formGroup]="formConfig" novalidate (ngSubmit)="submit()">
     <mat-form-field class="forms-inputs">
       <input
         matInput
@@ -50,7 +50,7 @@
     <button
       mat-raised-button
       color="primary"
-      [disabled]="formForChanges.invalid"
+      [disabled]="formConfig.invalid"
     >
       Зберегти
     </button>

@@ -30,20 +30,9 @@ export class StudentsService {
   }
 
   public changeStudent(student: Student): Observable<any> {
-    // const body = {
-    //   lastname: student.lastname,
-    //   firstname: student.firstname,
-    //   patronymic: student.patronymic,
-    //   dateOfBirth: student.dateOfBirth,
-    //   classe: student.classe,
-    // };
+   
     return this.httpClient
-      .put(`${environment.baseUrl}/students/${student.id}`, student)
-      .pipe(
-        map((res: any) => {
-          return res.data;
-        })
-      );
+      .put(`${environment.baseUrl}/students/${student.id}`, student);
   }
 
   public deleteStudent(student: Student): Observable<any> {
