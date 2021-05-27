@@ -43,15 +43,24 @@ export class StudentsComponent implements OnInit, AfterViewInit {
   }
 
   public showStudents(id: number) {
-    this.studentService.getStudents(id).subscribe((res: Array<Student>) => {
+    this.studentService.getStudents(id).subscribe((res: Student[]) => {
       this.students.data = res;
+      console.log(res);
+      
     });
   }
 
   public showClasses() {
-    this.studentService.getClasses().subscribe((res: Array<Clazz>) => {
+    this.studentService.getClasses().subscribe((res: Clazz[]) => {
       this.classes = res;
     });
+  }
+
+  public newStudent() {
+    this.matdialog.open(ChangeStudentComponent, {
+      data: this.matdialog._getAfterAllClosed()
+    })
+    //this.studentService.createStudent(data)
   }
 
   public ngOnInit() {

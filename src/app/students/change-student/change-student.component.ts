@@ -1,6 +1,6 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { StudentsService } from 'src/app/services/students.service';
 import { Student } from '../interfaces/student.model';
 
@@ -9,33 +9,39 @@ import { Student } from '../interfaces/student.model';
   templateUrl: './change-student.component.html',
   styleUrls: ['./change-student.component.scss'],
 })
-export class ChangeStudentComponent {
-  public formForChanges: FormGroup;
+export class ChangeStudentComponent implements OnInit {
+  public formConfig!: FormGroup;
 
   public constructor(
     @Inject(MAT_DIALOG_DATA) public data: Student,
-    private studentService: StudentsService
-  ) {
-    this.formForChanges = new FormGroup({
-      lastname: new FormControl(data.lastname, Validators.required),
-      firstname: new FormControl(data.firstname, Validators.required),
-      patronymic: new FormControl(data.patronymic, Validators.required),
-      dateOfBirth: new FormControl(data.dateOfBirth, Validators.required),
-      classe: new FormControl(data.classe, Validators.required),
-    });
+    private studentService: StudentsService,
+    private fb: FormBuilder
+  ) {}
+
+  public ngOnInit(): void {
+   this.initForm();
   }
+
 
   public submit(): void {
     const student: Student = {
-      id: this.data.id,
-      lastname: this.formForChanges.value.lastname,
-      firstname: this.formForChanges.value.firstname,
-      patronymic: this.formForChanges.value.patronymic,
-      dateOfBirth: this.formForChanges.value.dateofBirth,
-      classe: this.formForChanges.value.classe,
+      ...this.formConfig.value
     };
+    console.log(student);
+    
     this.studentService.changeStudent(student).subscribe((res) => {
       this.data = res;
     });
   }
+
+  private initForm(): void {
+    this.formConfig = this.fb.group({
+      lastname: [this.data.lastname, [Validators.required]],
+      firstname: [this.data.firstname, [Validators.required]],
+      patronymic: [this.data.patronymic, [Validators.required]],
+      dateOfBirth: [this.data.dateOfBirth, [Validators.required]],
+      classe: [this.data.classe, [Validators.required]],
+    });
+  }
+  
 }
