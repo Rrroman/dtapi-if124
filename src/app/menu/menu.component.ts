@@ -8,10 +8,10 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 export class MenuComponent {
   @ViewChild('sideNav') public sideNav!: ElementRef;
 
-  public openMenu() {
-    const isMenuOpened =
+  public toggleMenu() {
+    const isMenuClosed =
       this.sideNav.nativeElement.classList.contains('menu-hidden');
-    if (isMenuOpened) {
+    if (isMenuClosed) {
       this.sideNav.nativeElement.classList.remove('menu-hidden');
     } else {
       this.sideNav.nativeElement.classList.add('menu-hidden');
