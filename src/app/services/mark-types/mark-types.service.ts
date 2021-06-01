@@ -19,4 +19,18 @@ export class MarkTypesService {
         })
       );
   }
+
+  public editMarkTypes(markTypes: IMarkTypes): Observable<any> {
+    const body = {
+      markType: markTypes.markType,
+      description: markTypes.description,
+    };
+    return this.http
+      .put(`http://dtapi.if.ua:8080/mark_types/${markTypes.id}`, body)
+      .pipe(
+        map((res: any) => {
+          return res.data;
+        })
+      );
+  }
 }

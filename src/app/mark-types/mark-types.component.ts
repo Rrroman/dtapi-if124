@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { IMarkTypes } from 'src/app/interfaces/mark-type.interface';
+import { MatSort } from '@angular/material/sort';
 import { MarkTypesService } from '../services/mark-types/mark-types.service';
 
 @Component({
@@ -9,7 +10,10 @@ import { MarkTypesService } from '../services/mark-types/mark-types.service';
   templateUrl: './mark-types.component.html',
   styleUrls: ['./mark-types.component.scss'],
 })
-export class MarkTypesComponent implements OnInit {
+export class MarkTypesComponent implements OnInit, AfterViewInit {
+  @ViewChild(MatSort)
+  public sort!: MatSort;
+
   public displayedColumns: string[] = [
     'id',
     'markType',
@@ -37,5 +41,9 @@ export class MarkTypesComponent implements OnInit {
 
   public ngOnInit(): void {
     this.getMarks();
+  }
+
+  public ngAfterViewInit(): void {
+    this.dataSource.sort = this.sort;
   }
 }

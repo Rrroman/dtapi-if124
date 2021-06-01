@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MarkTypesComponent } from './mark-types.component';
 
 describe('MarkTypesComponent', () => {
