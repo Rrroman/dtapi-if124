@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="router.url !== '/login'; else login">
   <header>
     <app-header></app-header>
   </header>
@@ -11,3 +11,7 @@
   </div>
   </div>
 </div>
+
+<ng-template #login>
+  <router-outlet></router-outlet>
+</ng-template>
