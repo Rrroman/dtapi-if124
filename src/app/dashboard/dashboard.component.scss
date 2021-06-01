@@ -1,0 +1,71 @@
+.container {
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+mat-card {
+  position: relative;
+  min-width: 300px;
+  margin: 10px;
+  border-radius: 20px;
+  min-height: 130px;
+  p {
+    margin-left: 16px;
+  }
+  mat-icon {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 52px;
+    color: #fff;
+    opacity: 0.65;
+  }
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.green-background {
+  background-color: #b1cbbb;
+}
+
+.pink-background {
+  background-color: #eea29a;
+}
+
+.blue-background {
+  background-color: #80ced6;
+}
+
+.brown-background {
+  background-color: #b9936c;
+}
+
+.yellow-background {
+  background-color: #ffcc5c;
+}
+
+.violet-background {
+  background-color: #b0aac0;
+}
+
+.total-number {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+}
+
+mat-card-header {
+  position: relative;
+}
+.title-center {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%);
+}

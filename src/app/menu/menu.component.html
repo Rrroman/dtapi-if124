@@ -1,0 +1,21 @@
+<nav class="menu-container">
+  <mat-icon class="menu-button" (click)="openMenu()">menu</mat-icon>
+  <div class="menu-items menu-hidden" #sideNav>
+    <a routerLink="/students" class="menu-item"><mat-icon>people</mat-icon>Учні
+    </a>
+    <a class="menu-item"><mat-icon>person</mat-icon>Вчителі
+    </a>
+    <a  routerLink="/classes" class="menu-item"><mat-icon>class</mat-icon>Класи
+    </a>
+    <a routerLink="/subjectsr" class="menu-item"><mat-icon>import_contacts</mat-icon>Предмети R
+    </a>
+    <a routerLink="/subjectsV" class="menu-item"><mat-icon>import_contacts</mat-icon>Предмети V
+    </a>
+    <a routerLink="/schedule" class="menu-item"><mat-icon>turned_in_not</mat-icon>Розклад
+    </a>
+    <a class="menu-item"><mat-icon>try</mat-icon>Типи оцінок
+    </a>
+  </div>
+
+</nav>
+
