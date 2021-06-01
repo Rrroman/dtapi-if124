@@ -29,6 +29,7 @@ import { MenuComponent } from './menu/menu.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ClassesComponent } from './classes/classes.component';
 import { DialogWindowComponent } from './classes/modalWindow/dialog-window/dialog-window.component';
+import { MarkTypesComponent } from './mark-types/mark-types.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { DialogWindowComponent } from './classes/modalWindow/dialog-window/dialo
     HomepageComponent,
     ClassesComponent,
     DialogWindowComponent,
+    MarkTypesComponent,
   ],
   entryComponents: [DialogOverviewComponent, DialogWindowComponent],
   imports: [

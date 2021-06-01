@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {Router} from "@angular/router"
-
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -22,7 +21,7 @@ export class AuthService {
         (response) => {
           const token: string | null = response.headers.get('authorization');
           localStorage.setItem('authToken', token!);
-          this.router.navigate(['/dashboard'])
+          this.router.navigate(['/dashboard']);
           console.log('Local storage --->', localStorage);
         },
         (error) => console.log(error)
