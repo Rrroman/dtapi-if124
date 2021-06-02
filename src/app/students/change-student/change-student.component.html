@@ -47,12 +47,10 @@
     />
     </mat-form-field>
     <br>
-    <button
-      mat-raised-button
-      color="primary"
-      [disabled]="formConfig.invalid"
-    >
-      Зберегти
-    </button>
+    <div class="btn-wrapper">
+      <button class="dialog-button" (click)="submit()" mat-raised-button mat-dialog-close
+              color="primary">Зберегти</button>
+      <button class="dialog-button" mat-button mat-dialog-close color="primary">Закрити</button>
+    </div>
   </form>
 </div>

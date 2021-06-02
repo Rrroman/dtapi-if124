@@ -26,58 +26,39 @@ export class StudentsComponent implements OnInit, AfterViewInit {
   ];
 
   public students = new MatTableDataSource();
-  public users = []
+
   public classes: Clazz[] = [];
 
   public constructor(
     private studentService: StudentsService,
-    private matdialog: MatDialog
+    private matDialog: MatDialog
   ) {}
 
-  public ngOnInit() {
+  public ngOnInit(): void {
     this.showClasses();
   }
 
-  public ngAfterViewInit() {
+  public ngAfterViewInit(): void {
     this.students.sort = this.sort;
   }
 
-  public showChangeDialog(student: Student): void {
-    console.log(student);
-
-    this.matdialog.open(ChangeStudentComponent, {
-      data: student,
-    });
-  }
-
-  public showStudents(id: number) {
-    this.studentService.getStudents(id).subscribe((res: Student[]) => {
+  public showStudents(classId: number): void {
+    this.studentService.getStudents(classId).subscribe((res: Student[]) => {
       this.students.data = res;
-      console.log(res);
     });
   }
 
-  public showClasses() {
+  public showClasses(): void {
     this.studentService.getClasses().subscribe((res: Clazz[]) => {
       this.classes = res;
     });
   }
 
-  public killStudent(student: Student) {
-    this.studentService.deleteStudent(student.id).subscribe();
-  }
-
-  public addStudent() {
-    this.matdialog.open(ChangeStudentComponent, {
-      data: this.matdialog._getAfterAllClosed()
+  public openAddOrEditStudentDialog(student?: Student): void {
+    this.matDialog.open(ChangeStudentComponent, {
+      data: student
     });
-    this.students.data.push(this.matdialog._getAfterAllClosed())
-    console.log(this.students.data);
-    
-    //this.studentService.createStudent()
-  }
 
-  public editStudent() {
-
+    this.matDialog.afterAllClosed.subscribe(() => this.showStudents(5));
   }
 }

@@ -19,29 +19,49 @@ export class ChangeStudentComponent implements OnInit {
   ) {}
 
   public ngOnInit(): void {
-   this.initForm();
+    console.log(this.data);
+
+    this.initForm();
   }
 
-
   public submit(): void {
+    const defaultStudentData = {
+      login: "hekkfj589",
+      email: null,
+      phone: null,
+      avatar: null,
+      id: 0,
+      classId: 9
+    };
     const student: Student = {
+      ...defaultStudentData,
       ...this.formConfig.value
     };
-    console.log(student);
-    
-    this.studentService.changeStudent(student).subscribe((res) => {
-      this.data = res;
-    });
+
+    this.studentService.addStudent(student).subscribe((newStudentData) => {
+      console.log(newStudentData);
+      
+    }, err => console.log(err)
+    );
   }
 
   private initForm(): void {
-    this.formConfig = this.fb.group({
-      lastname: [this.data.lastname, [Validators.required]],
-      firstname: [this.data.firstname, [Validators.required]],
-      patronymic: [this.data.patronymic, [Validators.required]],
-      dateOfBirth: [this.data.dateOfBirth, [Validators.required]],
-      classe: [this.data.classe, [Validators.required]],
-    });
+    if (this.data) {
+      this.formConfig = this.fb.group({
+        lastname: [this.data.lastname, [Validators.required]],
+        firstname: [this.data.firstname, [Validators.required]],
+        patronymic: [this.data.patronymic, [Validators.required]],
+        dateOfBirth: [this.data.dateOfBirth, [Validators.required]],
+        classe: [this.data.classe, [Validators.required]],
+      });
+    } else {
+      this.formConfig = this.fb.group({
+        lastname: ['', [Validators.required]],
+        firstname: ['', [Validators.required]],
+        patronymic: ['', [Validators.required]],
+        dateOfBirth: ['', [Validators.required]],
+        classe: ['', [Validators.required]],
+      });
+    }
   }
-  
 }

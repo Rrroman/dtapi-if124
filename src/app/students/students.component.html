@@ -2,16 +2,16 @@
 
   <div class="header">
 
-    <div class="class-btn" *ngFor="let item of classes">
-      <button 
+    <div class="class-btn" *ngFor="let class of classes">
+      <button
         mat-button
-        *ngIf="item.numOfStudents"
-        (click)="showStudents(item.id)">
+        *ngIf="class.numOfStudents"
+        (click)="showStudents(class.id)">
         <span class="material-icons">folder_special</span>
-        {{ item.className }}
+        {{ class.className }}
       </button>
     </div>
-    
+
   </div>
 
   <div class="div-table">
@@ -20,54 +20,46 @@
 
       <ng-container matColumnDef="lastname">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Прізвище </th>
-        <td mat-cell *matCellDef="let element"> {{ element.lastname }} </td>
+        <td mat-cell *matCellDef="let student"> {{ student.lastname }} </td>
       </ng-container>
-    
+
       <ng-container matColumnDef="firstname">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Ім'я </th>
-        <td mat-cell *matCellDef="let element"> {{ element.firstname }} </td>
+        <td mat-cell *matCellDef="let student"> {{ student.firstname }} </td>
       </ng-container>
-    
+
       <ng-container matColumnDef="patronymic">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> По батькові </th>
-        <td mat-cell *matCellDef="let element"> {{ element.patronymic }} </td>
+        <td mat-cell *matCellDef="let student"> {{ student.patronymic }} </td>
       </ng-container>
-    
+
       <ng-container matColumnDef="dateOfBirth">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Дата народження </th>
-        <td mat-cell *matCellDef="let element"> {{ element.dateOfBirth }} </td>
+        <td mat-cell *matCellDef="let student"> {{ student.dateOfBirth }} </td>
       </ng-container>
-    
+
       <ng-container matColumnDef="classe">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Клас </th>
-        <td mat-cell *matCellDef="let element"> {{ element.classe }} 
+        <td mat-cell *matCellDef="let student"> {{ student.classe }}
           <button mat-raised-button
-            (click)="killStudent(element.id)">
-            <mat-icon>delete</mat-icon>
-          </button>
-          <button mat-raised-button
-            (click)="showChangeDialog(element)">
-            <mat-icon>edit</mat-icon>
-          </button>
+          (click)="openAddOrEditStudentDialog(student)">Редагувати</button>
         </td>
       </ng-container>
 
       <ng-container matColumnDef="header-row-students">
-        <th mat-header-cell *matHeaderCellDef="let element" [attr.colspan]="6"> Клас </th>
+        <th mat-header-cell *matHeaderCellDef="let student" [attr.colspan]="6"> Клас </th>
       </ng-container>
-    
+
       <tr mat-header-row *matHeaderRowDef="['header-row-students']"></tr>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-  
+
     <div class="footer">
-      <button 
-      mat-button
-      (click)="addStudent()">Додати учня</button>
+      <button mat-button (click)="openAddOrEditStudentDialog()">Додати учня</button>
     </div>
-    
+
   </div>
-  
+
 </div>
