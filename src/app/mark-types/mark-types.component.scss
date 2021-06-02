@@ -32,8 +32,18 @@ table {
   width: 45%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 576px) {
   table {
     width: 100%;
+  }
+  .filter {
+    width: 100%;
+  }
+  tr {
+    &:hover {
+      .edit__btn {
+        right: 7%;
+      }
+    }
   }
 }

@@ -1,6 +1,6 @@
-<mat-form-field>
-    <mat-label>Фільтр</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+<mat-form-field class="filter">
+    <mat-label>Пошук</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
   </mat-form-field>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort >
 
