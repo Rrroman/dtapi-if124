@@ -1,20 +1,21 @@
+@import "../variables";
 header {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: #92a8d1;
+  background-color: $blue;
   height: 70px;
   align-items: center;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 1;
 }
 mat-icon {
   cursor: pointer;
   font-size: 50px;
   color: #fff;
-  opacity: 0.8;
+  opacity: $opacity-mat-icon;
   &:focus, &:active{
     border: none;
   }

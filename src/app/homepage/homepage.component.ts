@@ -7,5 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./homepage.component.scss'],
 })
 export class HomepageComponent {
+  public isMenuHidden = true;
+
   public constructor(public router: Router) {}
+
+  public toggleMenu() {
+    this.isMenuHidden = !this.isMenuHidden;
+  }
 }
