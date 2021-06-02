@@ -7,11 +7,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TokenInterceptor } from 'src/app/interceptors/token.interceptor';
+import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +29,7 @@ import { MenuComponent } from './menu/menu.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ClassesComponent } from './classes/classes.component';
 import { DialogWindowComponent } from './classes/modalWindow/dialog-window/dialog-window.component';
+import { MarkTypesComponent } from './mark-types/mark-types.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { DialogWindowComponent } from './classes/modalWindow/dialog-window/dialo
     HomepageComponent,
     ClassesComponent,
     DialogWindowComponent,
+    MarkTypesComponent,
   ],
   entryComponents: [DialogOverviewComponent, DialogWindowComponent],
   imports: [
