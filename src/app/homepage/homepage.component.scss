@@ -1,3 +1,4 @@
+@import "../variables";
 .container {
   width: 100%;
   height: 100%;
@@ -25,7 +26,7 @@ aside {
   top: 15px;
   left: 78px;
   z-index: 2;
-  opacity: .8;
+  opacity: $opacity-mat-icon;
 }
 @media screen and (max-width: 599px){
   .content {
@@ -38,6 +39,7 @@ aside {
   .menu-button {
     display: block;
   }
+
 }
 
 mat-icon {
