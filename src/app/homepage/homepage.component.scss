@@ -11,6 +11,7 @@ aside {
   width: 225px;
   position: fixed;
   top: 70px;
+  z-index: 999;
 }
 
 .content {
@@ -18,3 +19,32 @@ aside {
   margin-top: 70px;
   width: calc(100% - 225px);
 }
+.menu-button {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 78px;
+  z-index: 2;
+  opacity: .8;
+}
+@media screen and (max-width: 599px){
+  .content {
+    width: calc(100% - 50px);
+    margin-left: 20px;
+  }
+  .dn {
+    display: none;
+  }
+  .menu-button {
+    display: block;
+  }
+}
+
+mat-icon {
+  font-size: 40px;
+  color: #fff;
+}
+
+
+
+
