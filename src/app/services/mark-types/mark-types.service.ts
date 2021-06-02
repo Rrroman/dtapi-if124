@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { IMarkTypes } from '../../interfaces/mark-type.interface';
 
 @Injectable({
@@ -12,7 +13,7 @@ export class MarkTypesService {
 
   public getMarkTypes(): Observable<IMarkTypes[]> {
     return this.http
-      .get<Array<IMarkTypes>>('http://dtapi.if.ua:8080/mark_types')
+      .get<Array<IMarkTypes>>(`${environment.baseUrl}/mark_types`)
       .pipe(
         map((res: any) => {
           return res.data;
@@ -25,12 +26,9 @@ export class MarkTypesService {
       markType: markTypes.markType,
       description: markTypes.description,
     };
-    return this.http
-      .put(`http://dtapi.if.ua:8080/mark_types/${markTypes.id}`, body)
-      .pipe(
-        map((res: any) => {
-          return res.data;
-        })
-      );
+    return this.http.put(
+      `${environment.baseUrl}/mark_types/${markTypes.id}`,
+      body
+    );
   }
 }

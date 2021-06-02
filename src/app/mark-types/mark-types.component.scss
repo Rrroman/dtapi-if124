@@ -1,22 +1,49 @@
+@import "../variables.scss";
+
 button {
-  background: #92a8d1;
+  background: $blue;
   color: #fff;
+}
+
+.edit__btn {
   display: none;
 }
 
 tr {
   line-height: 2.7;
-
   &:hover {
-    button {
+    .edit__btn {
       position: absolute;
-      left: 50px;
+      right: 5%;
       display: inline-block;
-
     }
   }
 }
 
 table {
-  width: 100%;
+  margin: 0 auto;
+  width: 90%;
+  height: 100%;
+}
+
+.filter {
+  display: block;
+  margin: 0 auto;
+  width: 45%;
+}
+
+@media (max-width: 576px) {
+  table {
+    width: 100%;
+  }
+  .filter {
+    width: 100%;
+  }
+  tr {
+    &:hover {
+      .edit__btn {
+        right: 7%;
+      }
+    }
+  }
 }

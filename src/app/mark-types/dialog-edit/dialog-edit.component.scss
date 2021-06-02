@@ -1,0 +1,30 @@
+@import "../../variables.scss";
+
+.mat-dialog-content {
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+}
+
+button {
+  background: $blue;
+  color: #fff;
+}
+
+.markType-form {
+  width: 600px;
+}
+
+.mat-radio-button {
+  padding-right: 10px;
+}
+
+.btn-block {
+  padding-top: 30px;
+}
+
+.dialog-button {
+  margin: 0 10px;
+}
