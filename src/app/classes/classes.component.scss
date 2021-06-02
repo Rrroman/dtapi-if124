@@ -1,3 +1,5 @@
+@import "../variables";
+
 .classes{
     color: #000;
     margin: 0 auto; 
@@ -12,10 +14,10 @@
 
 table{
     width: 100%;
-    padding: 0 100px;
+    padding: 0 20px;
 }
 .mat-header-cell{
-    background-color: #3F51B5;
+    background-color: $blue;
     font-weight: bold;
     font-size: 20px;
     color: #fff;
@@ -39,6 +41,8 @@ table{
 
 button{
     margin: 30px auto 0 auto;
+    background-color: $blue;
+    color: #fff;
 }
 
 .edit-class-btn{
@@ -47,12 +51,24 @@ button{
     margin: 2px 5px;
     position: absolute;
     right: 10px;
-    top: 0;    
+    top: 0; 
+    background-color: $blue;   
 }
 
 .btn-editing-wrapper{
     display: none;
 }
+
 .mat-row:hover .btn-editing-wrapper{
 display: block;
 }
+
+@media screen and (max-width: 695px) {
+    .mat-header-cell{
+        font-size: 15px;
+    }
+
+    table{
+        padding: 0 5px;
+    }
+  }
