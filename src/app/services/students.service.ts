@@ -29,26 +29,22 @@ export class StudentsService {
     );
   }
 
-  public changeStudent(student: Student): Observable<any> {
-   
-    return this.httpClient
-      .put(`${environment.baseUrl}/students/${student.id}`, student);
-  }
-
-  public deleteStudent(student: Student): Observable<any> {
-    return this.httpClient
-      .patch(`${environment.baseUrl}/students/${student.id}`, student)
-      .pipe(
-        map((response: any) => {
-          return response.data;
-        })
-      );
-  }
   public createStudent(student: Student) {
     return this.httpClient
     .post(`${environment.baseUrl}/students`, student
     ).subscribe(res => {console.log(res);
     })
   }
+
+  public changeStudent(student: Student): Observable<any> {
+    return this.httpClient
+      .put(`${environment.baseUrl}/students/${student.id}`, student);
+  }
+
+  public deleteStudent(id: string): Observable<any> {
+    return this.httpClient
+      .delete(`${environment.baseUrl}/students/${id}`)
+  }
+  
 }
 

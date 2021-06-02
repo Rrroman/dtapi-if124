@@ -26,13 +26,21 @@ export class StudentsComponent implements OnInit, AfterViewInit {
   ];
 
   public students = new MatTableDataSource();
-
+  public users = []
   public classes: Clazz[] = [];
 
   public constructor(
     private studentService: StudentsService,
     private matdialog: MatDialog
   ) {}
+
+  public ngOnInit() {
+    this.showClasses();
+  }
+
+  public ngAfterViewInit() {
+    this.students.sort = this.sort;
+  }
 
   public showChangeDialog(student: Student): void {
     console.log(student);
@@ -46,7 +54,6 @@ export class StudentsComponent implements OnInit, AfterViewInit {
     this.studentService.getStudents(id).subscribe((res: Student[]) => {
       this.students.data = res;
       console.log(res);
-      
     });
   }
 
@@ -56,18 +63,21 @@ export class StudentsComponent implements OnInit, AfterViewInit {
     });
   }
 
-  public newStudent() {
+  public killStudent(student: Student) {
+    this.studentService.deleteStudent(student.id).subscribe();
+  }
+
+  public addStudent() {
     this.matdialog.open(ChangeStudentComponent, {
       data: this.matdialog._getAfterAllClosed()
-    })
-    //this.studentService.createStudent(data)
+    });
+    this.students.data.push(this.matdialog._getAfterAllClosed())
+    console.log(this.students.data);
+    
+    //this.studentService.createStudent()
   }
 
-  public ngOnInit() {
-    this.showClasses();
-  }
+  public editStudent() {
 
-  public ngAfterViewInit() {
-    this.students.sort = this.sort;
   }
 }
