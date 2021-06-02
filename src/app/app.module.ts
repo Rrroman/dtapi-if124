@@ -30,6 +30,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { ClassesComponent } from './classes/classes.component';
 import { DialogWindowComponent } from './classes/modalWindow/dialog-window/dialog-window.component';
 import { MarkTypesComponent } from './mark-types/mark-types.component';
+import { DialogEditComponent } from './mark-types/dialog-edit/dialog-edit.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { MarkTypesComponent } from './mark-types/mark-types.component';
     ClassesComponent,
     DialogWindowComponent,
     MarkTypesComponent,
+    DialogEditComponent,
   ],
   entryComponents: [DialogOverviewComponent, DialogWindowComponent],
   imports: [

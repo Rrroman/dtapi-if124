@@ -15,12 +15,15 @@ export class DashboardComponent implements OnInit {
 
   public pupilsAmount = 0;
 
+  public markTypesAmount = 0;
+
   public constructor(private dashboardService: DashboardService) {}
 
   public ngOnInit(): void {
     this.getClasses();
     this.getSubjects();
     this.getTeachers();
+    this.getMarkTypes();
   }
 
   private getClasses() {
@@ -44,6 +47,12 @@ export class DashboardComponent implements OnInit {
   private getTeachers() {
     this.dashboardService.getTeachers().subscribe((data) => {
       this.teachersAmount = data.data.length;
+    });
+  }
+
+  private getMarkTypes() {
+    this.dashboardService.getMarkTypes().subscribe((data) => {
+      this.markTypesAmount = data.data.length;
     });
   }
 }

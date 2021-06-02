@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'students', component: StudentsComponent },
   { path: 'subjectsV', component: SubjectsVComponent },
   { path: 'subjectsr', component: SubjectsRComponent },
-  { path: 'Mark-types', component: MarkTypesComponent },
+  { path: 'mark-types', component: MarkTypesComponent },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'classes', component: ClassesComponent },
