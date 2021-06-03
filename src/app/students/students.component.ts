@@ -16,6 +16,7 @@ import { ChangeStudentComponent } from './change-student/change-student.componen
 export class StudentsComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort)
   public sort!: MatSort;
+  public currentClazzId: number = 0;
 
   public displayedColumns: string[] = [
     'lastname',
@@ -36,17 +37,21 @@ export class StudentsComponent implements OnInit, AfterViewInit {
 
   public ngOnInit(): void {
     this.showClasses();
+    this.getCurrentClassId();
   }
 
   public ngAfterViewInit(): void {
     this.students.sort = this.sort;
   }
 
+  public getCurrentClassId() {
+    this.currentClazzId = this.studentService.getCurrentClazzId();
+  }
+
   public showStudents(classId: number): void {
     this.studentService.getStudents(classId).subscribe((res: Student[]) => {
       this.students.data = res;
       console.log(res);
-      
     });
   }
 
@@ -61,6 +66,6 @@ export class StudentsComponent implements OnInit, AfterViewInit {
       data: student
     });
 
-    this.matDialog.afterAllClosed.subscribe(() => this.showStudents(5));
+    this.matDialog.afterAllClosed.subscribe(() => this.showStudents(this.currentClazzId));
   }
 }
