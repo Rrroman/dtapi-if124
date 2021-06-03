@@ -36,10 +36,12 @@
   </mat-card>
 
   <mat-card routerLink="/mark-types" class="type-of-marks">
-    <mat-card-header class="title-center">
+    <mat-card-header>
       <mat-card-title>Типи оцінок</mat-card-title>
     </mat-card-header>
     <mat-icon>grade</mat-icon>
+    <p class="total-number">{{markTypesAmount}}</p>
+    <p class="subtitle">Загальна кількість типів</p>
   </mat-card>
 
   <mat-card routerLink="/schedule" class="schedule">
