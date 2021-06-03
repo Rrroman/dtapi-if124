@@ -3,6 +3,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  @media screen and(max-width: 599px) {
+    margin: 20px;
+  }
 }
 
 mat-card {
