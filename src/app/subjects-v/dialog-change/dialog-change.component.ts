@@ -1,8 +1,8 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Subject } from 'src/app/interfaces/subjectr';
 import { SubjectVService } from 'src/app/services/subject-v/subject-v.service';
+import { SubjectI } from 'src/app/interfaces/subject';
 
 @Component({
   selector: 'app-dialog-change',
@@ -13,7 +13,7 @@ export class DialogChangeComponent {
   public formForChanges: FormGroup;
 
   public constructor(
-    @Inject(MAT_DIALOG_DATA) public data: Subject,
+    @Inject(MAT_DIALOG_DATA) public data: SubjectI,
     private subjectServiceV: SubjectVService
   ) {
     this.formForChanges = new FormGroup({
@@ -25,14 +25,12 @@ export class DialogChangeComponent {
     });
   }
 
-  public submit(): void {
-    const subject: Subject = {
+  public onSubmit(): void {
+    const subject: SubjectI = {
       subjectId: this.data.subjectId,
       subjectName: this.formForChanges.value.subjectName,
       subjectDescription: this.formForChanges.value.subjectDescription,
     };
-    this.subjectServiceV.changeSubject(subject).subscribe((res) => {
-      console.log(res);
-    });
+    this.subjectServiceV.changeSubject(subject).subscribe();
   }
 }
