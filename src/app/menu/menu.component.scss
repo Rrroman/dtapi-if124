@@ -1,0 +1,38 @@
+@import "../variables";
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: max-content;
+  top: 0;
+  bottom: 0;
+  justify-content: center;
+  a {
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    padding: 30px 0 15px;
+  }
+
+}
+
+.menu-item:hover, .menu-item:hover mat-icon {
+    background-color: $blue;
+    color: #fff;
+    opacity: $opacity-mat-icon;
+}
+
+mat-icon {
+  font-size: 30px;
+  color: #99a9d1;
+  margin-right: 20px;
+  padding-top: 10px;
+}
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  cursor: pointer;
+}
+

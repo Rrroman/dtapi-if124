@@ -11,6 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TokenInterceptor } from 'src/app/interceptors/token.interceptor';
+import { MatIconModule } from '@angular/material/icon';
+import { MatRadioModule } from '@angular/material/radio';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ScheduleComponent } from './schedule/schedule.component';
@@ -18,7 +20,17 @@ import { SubjectsRComponent } from './subjects-r/subjects-r.component';
 import { SubjectsVComponent } from './subjects-v/subjects-v.component';
 import { LoginComponent } from './login/login.component';
 import { DialogChangeComponent } from './subjects-v/dialog-change/dialog-change.component';
+import { StudentsComponent } from './students/students.component';
 import { DialogOverviewComponent } from './subjects-r/dialog-overview/dialog-overview.component';
+import { ChangeStudentComponent } from './students/change-student/change-student.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeaderComponent } from './header/header.component';
+import { MenuComponent } from './menu/menu.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { ClassesComponent } from './classes/classes.component';
+import { DialogWindowComponent } from './classes/modalWindow/dialog-window/dialog-window.component';
+import { MarkTypesComponent } from './mark-types/mark-types.component';
+import { DialogEditComponent } from './mark-types/dialog-edit/dialog-edit.component';
 
 @NgModule({
   declarations: [
@@ -28,9 +40,19 @@ import { DialogOverviewComponent } from './subjects-r/dialog-overview/dialog-ove
     SubjectsRComponent,
     SubjectsVComponent,
     DialogOverviewComponent,
+    StudentsComponent,
     DialogChangeComponent,
+    ChangeStudentComponent,
+    DashboardComponent,
+    HeaderComponent,
+    MenuComponent,
+    HomepageComponent,
+    ClassesComponent,
+    DialogWindowComponent,
+    MarkTypesComponent,
+    DialogEditComponent,
   ],
-  entryComponents: [DialogOverviewComponent],
+  entryComponents: [DialogOverviewComponent, DialogWindowComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -45,6 +67,8 @@ import { DialogOverviewComponent } from './subjects-r/dialog-overview/dialog-ove
     HttpClientModule,
     MatDialogModule,
     MatCardModule,
+    MatIconModule,
+    MatRadioModule,
   ],
   providers: [
     {

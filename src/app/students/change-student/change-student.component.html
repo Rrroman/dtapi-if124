@@ -1,0 +1,58 @@
+<h1 mat-dialog-title>Учень</h1>
+<div mat-dialog-content>
+  <form [formGroup]="formForChanges" novalidate (ngSubmit)="submit()">
+    <mat-form-field class="forms-inputs">
+      <input
+        matInput
+        value=""
+        formControlName="lastname"
+        placeholder="Прізвище"
+      />
+    </mat-form-field>
+    <br />
+    <mat-form-field class="forms-inputs">
+      <input
+      matInput
+      value=""
+      formControlName="firstname"
+      placeholder="Ім'я"
+    />
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input
+      matInput
+      value=""
+      formControlName="patronymic"
+      placeholder="По батькові"
+    />
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input
+      matInput
+      value=""
+      type="date"
+      formControlName="dateOfBirth"
+      placeholder="Дата народження"
+    />
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input
+      matInput
+      value=""
+      formControlName="classe"
+      placeholder="Клас"
+    />
+    </mat-form-field>
+    <br>
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="formForChanges.invalid"
+    >
+      Зберегти
+    </button>
+  </form>
+</div>

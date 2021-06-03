@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -7,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   public URL: string = 'http://dtapi.if.ua:8080/signin';
 
-  public constructor(private httpClient: HttpClient) {}
+  public constructor(private httpClient: HttpClient, private router: Router) {}
 
   public login(login: string, password: string) {
     const userData = {
@@ -18,13 +19,12 @@ export class AuthService {
       .post(this.URL, userData, { observe: 'response' })
       .subscribe(
         (response) => {
-          const token = response.headers.get('authorization');
+          const token: string | null = response.headers.get('authorization');
           localStorage.setItem('authToken', token!);
+          this.router.navigate(['/dashboard']);
           console.log('Local storage --->', localStorage);
         },
         (error) => console.log(error)
       );
   }
 }
-
-/// guards

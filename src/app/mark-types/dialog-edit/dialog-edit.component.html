@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Редагувати</h1>
+<div mat-dialog-content>
+    <form class="markTypes-form" [formGroup]="markTypesForm">
+        <mat-form-field class="markTypes-form-item">
+            <mat-label>Тип оцінки</mat-label>
+            <input matInput placeholder="Назва" formControlName="markTypesName">
+        </mat-form-field>
+        <mat-form-field class="markTypes-form-item">
+            <mat-label>Опис</mat-label>
+            <textarea matInput placeholder="Опис" formControlName="markTypesDescription"></textarea>
+        </mat-form-field>
+        <mat-radio-group aria-label="Статус оцінки" formControlName="markTypesIsActive">
+            <mat-radio-button [value]=true>Активний</mat-radio-button>
+            <mat-radio-button [value]=false>Неактивний</mat-radio-button>
+        </mat-radio-group>
+        <div class="btn-block">
+            <button class="dialog-button" (click)="edit()" mat-raised-button mat-dialog-close>Зберегти</button>
+            <button class="dialog-button" mat-button mat-dialog-close>Закрити</button>
+        </div>
+    </form>
+</div>

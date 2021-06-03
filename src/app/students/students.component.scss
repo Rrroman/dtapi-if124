@@ -1,0 +1,53 @@
+table {
+  margin: 0 auto;
+  width: 100%;
+
+  tr {
+    button {
+      display: none;
+    }
+  }
+  td {
+    width: 15%;
+    vertical-align: middle;
+  }
+  
+  tr:hover {
+    button {
+      display: block;
+      margin: 0;
+      float: right;
+    }
+  }
+}
+
+button {
+  margin: 20px;
+  background-color: #92a8d1;
+  color: #ffffff;
+}
+
+.mat-header-cell {
+  font-size: medium;
+  text-align: center;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 50px auto;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+
+  h2 {
+    text-align: center;
+  }
+}

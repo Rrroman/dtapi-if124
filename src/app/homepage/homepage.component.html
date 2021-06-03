@@ -1,0 +1,18 @@
+<div class="container" *ngIf="router.url !== '/login'; else login">
+  <header>
+    <mat-icon class="menu-button" (click)="toggleMenu()">menu</mat-icon>
+    <app-header></app-header>
+  </header>
+  <div class="wrapper">
+  <aside [ngClass]="{'dn': isMenuHidden}">
+    <app-menu></app-menu>
+  </aside>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+  </div>
+</div>
+
+<ng-template #login>
+  <router-outlet></router-outlet>
+</ng-template>
