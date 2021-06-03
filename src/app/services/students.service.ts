@@ -9,9 +9,12 @@ import { Student } from '../students/interfaces/student.model';
   providedIn: 'root',
 })
 export class StudentsService {
+  public currentClazzId: number = 0;
+
   public constructor(private httpClient: HttpClient) {}
 
   public getStudents(idClass: number): Observable<any> {
+    this.currentClazzId = idClass;
     return this.httpClient
       .get(`${environment.baseUrl}/students/classes/${idClass}`)
       .pipe(
@@ -19,6 +22,10 @@ export class StudentsService {
           return res.data;
         })
       );
+  }
+
+  public getCurrentClazzId() {
+    return this.currentClazzId;
   }
 
   public getClasses() {
@@ -30,23 +37,8 @@ export class StudentsService {
   }
 
   public addStudent(student: Student): Observable<any> {
-    console.log(student);
-    const body = {
-      firstname: "Катеринепааа",
-      lastname: "Полянсьвввка",
-      patronymic: "Валеріївнаа",
-      classe: "7-А",
-      classId: 2,
-      dateOfBirth: "1999-08-16",
-      login: "kPolyan16",
-      email: null,
-      phone: null,
-      avatar: null,
-      id: 46
-    };
-
     return this.httpClient
-      .post(`http://dtapi.if.ua:8080/students`, body)
+      .post(`http://dtapi.if.ua:8080/students`, student)
       .pipe(
         map((res: any) => {
           return res.data;
