@@ -6,9 +6,12 @@
 
 .wrapper {
   display: flex;
-  justify-content: center;
 }
 
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+}
 aside {
   width: 225px;
   position: fixed;
@@ -32,7 +35,7 @@ aside {
 @media screen and (max-width: 599px){
   .content {
     width: calc(100% - 50px);
-    margin-left: 20px;
+    margin-left: 25px;
   }
   .dn {
     display: none;
