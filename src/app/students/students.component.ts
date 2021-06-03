@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
@@ -51,7 +51,6 @@ export class StudentsComponent implements OnInit, AfterViewInit {
   public showStudents(classId: number): void {
     this.studentService.getStudents(classId).subscribe((res: Student[]) => {
       this.students.data = res;
-      console.log(res);
     });
   }
 
@@ -67,5 +66,7 @@ export class StudentsComponent implements OnInit, AfterViewInit {
     });
 
     this.matDialog.afterAllClosed.subscribe(() => this.showStudents(this.currentClazzId));
+    console.log(this.currentClazzId);
+    
   }
 }

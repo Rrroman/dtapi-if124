@@ -15,6 +15,8 @@ export class StudentsService {
 
   public getStudents(idClass: number): Observable<any> {
     this.currentClazzId = idClass;
+    console.log(this.currentClazzId);
+    
     return this.httpClient
       .get(`${environment.baseUrl}/students/classes/${idClass}`)
       .pipe(

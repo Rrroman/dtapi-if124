@@ -44,12 +44,7 @@ export class ChangeStudentComponent implements OnInit {
       ...defaultStudentData,
       ...this.formConfig.value
     };
-    console.log('std', student);
-    this.studentService.addStudent(student).subscribe((newStudentData) => {
-      console.log(newStudentData);
-      
-    }, err => console.log(err)
-    );
+    this.studentService.addStudent(student).subscribe();
   }
 
   private initForm(): void {
