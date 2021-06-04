@@ -10,7 +10,7 @@
           <mat-label>Опис предмету</mat-label>
           <textarea matInput placeholder="Опис предмету" formControlName="subjectDescription"></textarea>
         </mat-form-field>
-        <button *ngIf="this.data.subjectName.length == 0" mat-raised-button color="primary" type="submit" (click)="createSubject()">Зберегти</button>
+        <button *ngIf="this.data.subjectName.length === 0" mat-raised-button color="primary" type="submit" (click)="createSubject()">Зберегти</button>
         <button *ngIf="this.data.subjectName.length > 0" mat-raised-button color="primary" type="submit">Редагувати</button>
     </form>
 </div>

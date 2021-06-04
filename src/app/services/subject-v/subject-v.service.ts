@@ -9,6 +9,7 @@ import { SubjectI } from 'src/app/interfaces/subject';
 })
 export class SubjectVService {
   public constructor(private httpClient: HttpClient) {}
+
   public transmissionOfSubject$ = new Subject<SubjectI>();
 
   public getSubjects(): Observable<Array<SubjectI>> {
