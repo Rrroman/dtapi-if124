@@ -15,8 +15,7 @@ export class StudentsService {
 
   public getStudents(idClass: number): Observable<any> {
     this.currentClazzId = idClass;
-    console.log(this.currentClazzId);
-    
+
     return this.httpClient
       .get(`${environment.baseUrl}/students/classes/${idClass}`)
       .pipe(
@@ -40,7 +39,7 @@ export class StudentsService {
 
   public addStudent(student: Student): Observable<any> {
     return this.httpClient
-      .post(`http://dtapi.if.ua:8080/students`, student)
+      .post(`${environment.baseUrl}/students`, student)
       .pipe(
         map((res: any) => {
           return res.data;
@@ -56,13 +55,12 @@ export class StudentsService {
       dateOfBirth: student.dateOfBirth,
       classe: student.classe,
     };
-    return this.httpClient.put<Student>(
-      `${environment.baseUrl}/admin/students/${student.id}`,
-      body
-    ).pipe(
-      map((res: any) => {
-        return res.data;
-      })
-    );
+    return this.httpClient
+      .put<Student>(`${environment.baseUrl}/admin/students/${student.id}`, body)
+      .pipe(
+        map((res: any) => {
+          return res.data;
+        })
+      );
   }
 }

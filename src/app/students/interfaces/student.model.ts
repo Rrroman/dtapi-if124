@@ -6,5 +6,5 @@ export interface Student {
   firstname: string;
   lastname: string;
   patronymic: string;
-  email: string ;
+  email: string;
 }

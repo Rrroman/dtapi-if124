@@ -11,38 +11,30 @@ import { Student } from '../interfaces/student.model';
 })
 export class ChangeStudentComponent implements OnInit {
   public formConfig!: FormGroup;
-  public currentClazzId: number = 0;
 
   public constructor(
     @Inject(MAT_DIALOG_DATA) public data: Student,
     private studentService: StudentsService,
-    private fb: FormBuilder,
+    private fb: FormBuilder
   ) {}
 
   public ngOnInit(): void {
-    this.getCurrentClassId();
-    console.log(this.currentClazzId);
-    
     this.initForm();
-  }
-
-  public getCurrentClassId() {
-      this.currentClazzId = this.studentService.getCurrentClazzId();
   }
 
   public submit(): void {
     const defaultStudentData = {
-      login: "",
-      email: "",
-      phone: "",
-      avatar: "",
+      login: '',
+      email: '',
+      phone: '',
+      avatar: '',
       id: 0,
-      classId: this.currentClazzId
+      classId: this.studentService.getCurrentClazzId(),
     };
-    
+
     const student: Student = {
       ...defaultStudentData,
-      ...this.formConfig.value
+      ...this.formConfig.value,
     };
     this.studentService.addStudent(student).subscribe();
   }
