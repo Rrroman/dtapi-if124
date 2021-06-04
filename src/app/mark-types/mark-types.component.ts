@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { IMarkTypes } from 'src/app/interfaces/mark-type.interface';
 import { MatSort } from '@angular/material/sort';
 import { MarkTypesService } from '../services/mark-types/mark-types.service';
+import { DialogEditComponent } from './dialog-edit/dialog-edit.component';
 
 @Component({
   selector: 'app-mark-types',
@@ -37,6 +38,11 @@ export class MarkTypesComponent implements OnInit, AfterViewInit {
     this.markTypesService.getMarkTypes().subscribe((data: IMarkTypes[]) => {
       this.dataSource.data = data;
     });
+  }
+
+  public openMarkTypesEdit(): void {
+    this.dialog.open(DialogEditComponent);
+    this.dialog.afterAllClosed.subscribe(() => this.getMarks());
   }
 
   public ngOnInit(): void {

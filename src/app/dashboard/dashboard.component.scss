@@ -3,6 +3,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  @media screen and(max-width: 599px) {
+    margin: 20px;
+  }
 }
 
 mat-card {
@@ -11,6 +14,7 @@ mat-card {
   margin: 10px;
   border-radius: 20px;
   min-height: 130px;
+  cursor: pointer;
   p {
     margin-left: 16px;
   }
@@ -27,27 +31,27 @@ mat-card {
   }
 }
 
-.green-background {
+.pupils {
   background-color: #b1cbbb;
 }
 
-.pink-background {
+.teachers {
   background-color: #eea29a;
 }
 
-.blue-background {
+.classes {
   background-color: #80ced6;
 }
 
-.brown-background {
+.subjectsr {
   background-color: #b9936c;
 }
 
-.yellow-background {
+.type-of-marks{
   background-color: #ffcc5c;
 }
 
-.violet-background {
+.schedule {
   background-color: #b0aac0;
 }
 

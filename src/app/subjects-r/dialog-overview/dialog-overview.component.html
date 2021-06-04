@@ -1,6 +1,6 @@
 <h1 mat-dialog-title>Предмет</h1>
 <div mat-dialog-content>
-    <form class="example-form" [formGroup]="subjectForm">
+    <form class="example-form" [formGroup]="subjectForm" (ngSubmit)="onSubmit()">
         <mat-form-field class="example-full-width">
           <mat-label>Назва предмету</mat-label>
           <input matInput placeholder="Назва предмету" formControlName="subjectName">
@@ -10,7 +10,8 @@
           <mat-label>Опис предмету</mat-label>
           <textarea matInput placeholder="Опис предмету" formControlName="subjectDescription"></textarea>
         </mat-form-field>
-        <button mat-raised-button color="primary">Зберегти</button>
+        <button *ngIf="this.data.subjectName.length == 0" mat-raised-button color="primary" type="submit" (click)="createSubject()">Зберегти</button>
+        <button *ngIf="this.data.subjectName.length > 0" mat-raised-button color="primary" type="submit">Редагувати</button>
     </form>
 </div>
 <div mat-dialog-actions>

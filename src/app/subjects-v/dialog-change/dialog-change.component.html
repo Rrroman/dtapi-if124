@@ -1,6 +1,6 @@
 <h1 mat-dialog-title>Предмет</h1>
 <div mat-dialog-content>
-  <form [formGroup]="formForChanges" novalidate (ngSubmit)="submit()">
+  <form [formGroup]="formForChanges" novalidate (ngSubmit)="onSubmit()">
     <mat-form-field class="forms-inputs">
       <input
         matInput
@@ -19,9 +19,10 @@
       ></textarea>
     </mat-form-field>
     <button
+      type="submit"
       mat-raised-button
       color="primary"
-      [disabled]="formForChanges.invalid"
+      [disabled]="formForChanges.invalid || !formForChanges.dirty"
     >
       Зберегти
     </button>

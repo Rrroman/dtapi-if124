@@ -1,0 +1,30 @@
+@import "../variables.scss";
+table {
+    margin: 0 auto;
+    width: 90%;
+    border-collapse: collapse;
+    th {
+        text-align: center;
+        font-size: medium;
+    }
+    td {
+        width: 50%;
+        button {
+            display: none;
+            min-width: 40px;
+        } 
+    }
+    tr {
+        line-height: 2.5;
+      }
+    tr:hover {
+        button {
+            display: block;
+            float: right;
+            color: $blue;
+        }}
+}
+button .mat-raised-button{
+    background-color: $blue;
+    text-align: center;
+}
