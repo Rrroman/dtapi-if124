@@ -32,6 +32,7 @@ export class ClassesComponent implements OnInit {
   public getClassesInfo() {
     this.classesService.getClassesList().subscribe((res: Array<IClasses>) => {
       this.dataSource.data = res;
+      console.log(res);
     });
   }
 

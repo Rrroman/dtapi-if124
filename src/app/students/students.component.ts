@@ -31,32 +31,36 @@ export class StudentsComponent implements OnInit, AfterViewInit {
 
   public constructor(
     private studentService: StudentsService,
-    private matdialog: MatDialog
+    private matDialog: MatDialog
   ) {}
 
-  public showChangeDialog(student: Student): void {
-    this.matdialog.open(ChangeStudentComponent, {
-      data: student,
-    });
+  public ngOnInit(): void {
+    this.showClasses();
   }
 
-  public showStudents(id: number) {
-    this.studentService.getStudents(id).subscribe((res: Array<Student>) => {
+  public ngAfterViewInit(): void {
+    this.students.sort = this.sort;
+  }
+
+  public showStudents(classId: number): void {
+    this.studentService.getStudents(classId).subscribe((res: Student[]) => {
       this.students.data = res;
     });
   }
 
-  public showClasses() {
-    this.studentService.getClasses().subscribe((res: Array<Clazz>) => {
+  public showClasses(): void {
+    this.studentService.getClasses().subscribe((res: Clazz[]) => {
       this.classes = res;
     });
   }
 
-  public ngOnInit() {
-    this.showClasses();
-  }
+  public openAddOrEditStudentDialog(student?: Student): void {
+    this.matDialog.open(ChangeStudentComponent, {
+      data: student,
+    });
 
-  public ngAfterViewInit() {
-    this.students.sort = this.sort;
+    this.matDialog.afterAllClosed.subscribe(() =>
+      this.showStudents(this.studentService.getCurrentClazzId())
+    );
   }
 }
