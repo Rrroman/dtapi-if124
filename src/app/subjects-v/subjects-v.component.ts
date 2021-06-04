@@ -8,9 +8,9 @@ import {
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
+import { Subscription } from 'rxjs';
 import { DialogChangeComponent } from './dialog-change/dialog-change.component';
 import { SubjectVService } from '../services/subject-v/subject-v.service';
-import { Subscription } from 'rxjs';
 import { SubjectI } from '../interfaces/subject';
 
 @Component({
